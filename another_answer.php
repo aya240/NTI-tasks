@@ -14,10 +14,10 @@ else{
 
 
 
-/*
+
 
 $small_letter = letters('a' , 'z');
-$capital_letter = letters( ord('A') , ord('Z'));
+//$capital_letter = letters( ord('A') , ord('Z'));
 
 
 function letters( $start , $end){
@@ -25,9 +25,11 @@ function letters( $start , $end){
   for ( $i= $start ; $i<= $end ; $i++ ){
 $letter .= $i ;
   }
-  return $letter ;
+ return $letter ;
 }
 
+echo $small_letter;
+/*
 echo $small_letter ;
 -------------explain-------
 output :
