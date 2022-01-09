@@ -1,6 +1,6 @@
 <?php
-session_start();
-//--------------- function to check char -------
+
+    //--------------- function to check char -------
 function check_char( $char){
   $check = 0;
   for( $i=0 ; $i < strlen($char) ; $i++){
@@ -33,13 +33,19 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
   $url = clean($_POST['url']);
    $gender = $_POST['gender'] ;
    $allowed_extension = [ 'jpg' , 'gif' , 'png']; 
-
+/*
     $_SESSION['name'] = $name;
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $password;
     $_SESSION['address'] = $address;
     $_SESSION['url'] = $url;
     $_SESSION['gender'] = $gender;
+    */
+    
+    $cookie_name = 'data';
+$cookie_value = $name . '<br>' . $email .'<br>' . $password  . '<br>' . $address . '<br>' . $url . '<br>' .  $gender ;
+    setcookie( $cookie_name , $cookie_value , time()+20000 , '/' );
+    
 //--------error of name-----
   if( empty($name) ){
     $errors['name_required'] = "your name is required" ;
